@@ -1,0 +1,34 @@
+﻿<Window x:Class="PathBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pathBox="clr-namespace:PathBox"
+        xmlns:system="clr-namespace:System;assembly=System"
+        xmlns:system1="clr-namespace:System;assembly=mscorlib"
+        Title="MainWindow"
+        Width="525"
+        Height="350">
+    <Window.Resources>
+        <pathBox:CommentStripConverter x:Key="CommentStripConverter" />
+        <system1:String x:Key="Geometry1">M2,62 L22,62 M42,100 /*comment*/ L63,0 M7,31 L28,31 34,0 M73,0 L52,100 M44,0 L38,31 M26,39 L5,39 M20,70 L0,70</system1:String>
+    </Window.Resources>
+    <Canvas>
+        <Path Canvas.Left="6"
+              Canvas.Top="-0.167"
+              Width="72.395"
+              Height="100"
+              Data="{Binding Source={StaticResource Geometry1},
+                             Converter={StaticResource CommentStripConverter}}"
+              Stretch="Fill"
+              Stroke="#FF35813F"
+              StrokeThickness="3" />
+        <Path Canvas.Left="20"
+              Canvas.Top="30"
+              Width="72"
+              Height="69"
+              Data="M20,100 L34,31 93,31 91,39 42,39 37,62 88,62 86,70 36,70 29,100 z"
+              Fill="#FF35813F"
+              Stretch="Fill"
+              Stroke="#FF35813F"
+              StrokeThickness="3" />
+    </Canvas>
+</Window>
