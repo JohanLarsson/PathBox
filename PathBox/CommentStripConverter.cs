@@ -8,7 +8,7 @@ namespace PathBox
 {
     public class CommentStripConverter : IValueConverter
     {
-        private static readonly string commentPattern = @"/\*[^\*]*\*/";
+        private static readonly string commentPattern = @"/\*((?!\*/).)*\*/";
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var s = value as string;
